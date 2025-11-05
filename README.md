@@ -1,26 +1,20 @@
 # NLP Propaganda Detection Model
 
-A machine learning project focused on detecting and analyzing propaganda in text using Natural Language Processing techniques.
+A project focused on detecting and classifying text into propaganda/misinformation/oppozition classes using Natural Language Processing techniques.
 
 ## Project Description
 
-This project implements machine learning models to detect propaganda in text data. It includes comprehensive data preprocessing, feature engineering, and multiple machine learning approaches including traditional ML models and deep learning techniques. The project provides both cleaned and lemmatized versions of training and testing datasets for flexible modeling approaches.
+This project implements ML&DL models to detect propaganda in text data. It includes comprehensive data preprocessing, feature engineering, and multiple approaches for classification. The project provides both cleaned and lemmatized versions of training and testing datasets for flexible modeling approaches.
 
 ## Dataset
 
 The dataset includes:
-- **Training Data**: 
-  - `train_cleaned.csv` - Cleaned training samples
+- **Training Data**:
+  - `train_tg.csv` - Raw training data in telegram format
+  - `train_cleaned.csv` - Cleaned training samples without capital letter / stopwords
   - `train_lemmatized.csv` - Lemmatized training samples for NLP processing
-  - `train_tg.csv` - Training data in telegram format
   
-- **Test Data**: 
-  - `test_cleaned.csv` - Cleaned test samples
-  - `test_lemmatized.csv` - Lemmatized test samples
-  - `test_tg.csv` - Test data in telegram format
-
-- **Validation Data**:
-  - `val_lemmatized.csv` - Lemmatized validation set for model evaluation
+- **Test Data** and **Validation Data** have the same structure 
 
 All datasets are in CSV format with preprocessed text features ready for model training.
 
@@ -73,13 +67,14 @@ jupyter notebook
    - Train machine learning models
    - Evaluate model performance
    - Generate analysis visualizations
+BUT! Be aware that running the trainer for pretrained models can take up to 3 hours each. 
 
 ### Using the Dataset
 
 The cleaned and lemmatized datasets are ready to use:
 - For traditional ML models, use the cleaned or lemmatized CSV files
-- The models include train/test splits for validation
-- Use the validation set (`val_lemmatized.csv`) for final model evaluation
+- The models include train/val splits for validation
+- Use the test set (`test_lemmatized.csv`) for final model evaluation
 
 ## Project Workflow
 
@@ -94,6 +89,8 @@ The cleaned and lemmatized datasets are ready to use:
 ## Authors/Contributors
 
 - **Maria Onyshchuk** - [@MariaOnyshchuk](https://github.com/MariaOnyshchuk)
+- **Dmytro Malyk** - [@DmytroMalyk](https://github.com/DmytroMalyk)
+- **Roman Pavlosiuk** - [@RomanPavlosiuk](https://github.com/gllekkoff)
 
 ## License
 
