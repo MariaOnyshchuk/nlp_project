@@ -50,7 +50,8 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. Install required dependencies:
 ```bash
-pip install pandas numpy scikit-learn nltk matplotlib seaborn jupyter lightgbm sentence-transformers pymorphy3 wordcloud```
+pip install -r requirements.txt
+```
 
 ## How to Run
 
@@ -60,7 +61,7 @@ jupyter notebook
 ```
 
 2. **Open the main notebook**:
-   - Open `propaganda_detection_model.ipynb` in your browser
+   - Open `propaganda_detection.ipynb` in your browser
 
 3. **Run the notebook cells** sequentially to:
    - Load and explore the dataset
@@ -111,6 +112,7 @@ nlp_project/
 │   ├── test_tg.csv
 │   └── val_lemmatized.csv
 ├── propaganda_detection.ipynb
+├── requirements.txt
 └── README.md
 ```
 
