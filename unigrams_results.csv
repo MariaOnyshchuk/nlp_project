@@ -1,0 +1,2 @@
+method,classifier,accuracy,f1_macro,precision_macro,recall_macro
+Unigrams + LR,LR,0.7262405794264462,0.726330948478159,0.7292879840040257,0.7256864831875798

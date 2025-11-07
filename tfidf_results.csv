@@ -1,0 +1,2 @@
+method,classifier,accuracy,f1_macro,precision_macro,recall_macro
+TF-IDF (1-3 grams) + LR,LR,0.7154742096505824,0.7155555601961917,0.7177113276397266,0.7150130364354458
