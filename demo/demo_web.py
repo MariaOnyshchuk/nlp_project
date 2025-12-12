@@ -3,6 +3,11 @@ import gradio as gr
 import warnings
 warnings.filterwarnings('ignore')
 
+import re
+import pymorphy3
+
+morph = pymorphy3.MorphAnalyzer()
+
 class PropagandaDetector:
     def __init__(self):
         with open('model/propaganda_model.pkl', 'rb') as f:
@@ -22,7 +27,11 @@ class PropagandaDetector:
                 "Opposition": 0.0
             }
 
-        text_tfidf = self.vectorizer.transform([text])
+        tokens = re.findall(r'[А-Яа-яA-Za-z]+', text.lower())
+        lemmatized_tokens = [morph.parse(word)[0].normal_form for word in tokens]
+        lemmatized_text = ' '.join(lemmatized_tokens)
+
+        text_tfidf = self.vectorizer.transform([lemmatized_text])
         probabilities = self.model.predict_proba(text_tfidf)[0]
 
         result = {
