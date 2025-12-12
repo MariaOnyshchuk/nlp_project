@@ -9,3 +9,4 @@ lightgbm
 sentence-transformers
 pymorphy3
 wordcloud
+faiss
