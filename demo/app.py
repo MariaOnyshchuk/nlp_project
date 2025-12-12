@@ -370,34 +370,13 @@ HTML_TEMPLATE = '''
                     </div>
                     
                     <div class="probs-grid">
-                        <div class="prob-section">
-                            <h4>BERT Probabilities</h4>
-                            <div>Misinformation: ${(data.bert_probs[0] * 100).toFixed(1)}%</div>
-                            <div>Propaganda: ${(data.bert_probs[1] * 100).toFixed(1)}%</div>
-                            <div>Opposition: ${(data.bert_probs[2] * 100).toFixed(1)}%</div>
-                        </div>
-                        <div class="prob-section">
-                            <h4>Logistic Regression</h4>
+                        <div class="prob-section" style="grid-column: 1 / -1;">
+                            <h4>Confidence Coefficients</h4>
                             <div>Misinformation: ${(data.lr_probs[0] * 100).toFixed(1)}%</div>
                             <div>Propaganda: ${(data.lr_probs[1] * 100).toFixed(1)}%</div>
                             <div>Opposition: ${(data.lr_probs[2] * 100).toFixed(1)}%</div>
                         </div>
                     </div>
-                </div>
-
-                <div class="result-card">
-                    <h2>📊 FAISS Nearest Neighbors</h2>
-                    ${data.retrieved.map((doc, i) => `
-                        <div class="neighbor">
-                            <div class="neighbor-header">
-                                <span class="neighbor-badge ${doc.label}">${doc.label}</span>
-                                <span style="font-size: 0.875rem; color: #6b7280;">
-                                    Distance: ${doc.distance.toFixed(4)}
-                                </span>
-                            </div>
-                            <div class="neighbor-text">${doc.text.substring(0, 150)}...</div>
-                        </div>
-                    `).join('')}
                 </div>
 
                 <div class="result-card">
