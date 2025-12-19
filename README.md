@@ -2,28 +2,28 @@
 
 # NLP Propaganda Detection Model
 
-A project for detecting and classifying text into **propaganda**, misinformation, and opposition classes using classical NLP pipelines and modern transformer-based methods, including a Retrieval-Augmented Generation (RAG) component.[1]
+A project for detecting and classifying text into **propaganda**, misinformation, and opposition classes using classical NLP pipelines and modern transformer-based methods, including a Retrieval-Augmented Generation (RAG) component. 
 
 ## Project Description
 
-This project implements both machine learning and deep learning models to detect propaganda in text using TF‑IDF features, traditional classifiers, and sentence-transformer embeddings.  It also includes an ensemble that combines a RAG-based model with a logistic regression classifier to improve robustness and interpretability.  The workflow covers data preprocessing, feature engineering, model training, evaluation, and visualization of results.[1]
+This project implements both machine learning and deep learning models to detect propaganda in text using TF‑IDF features, traditional classifiers, and sentence-transformer embeddings.  It also includes an ensemble that combines a RAG-based model with a logistic regression classifier to improve robustness and interpretability.  The workflow covers data preprocessing, feature engineering, model training, evaluation, and visualization of results. 
 
 ## RAG Component
 
-The RAG module retrieves semantically similar training samples or reference snippets using sentence-transformer embeddings and passes them, together with the input text, to a generative model that outputs a propaganda-related label.  These RAG predictions are then ensembled with a logistic regression model trained on classical features, forming the “RAG + LR” ensemble used in the later notebooks.  This design lets the system both ground its decisions in real examples and leverage learned decision boundaries from traditional models.[1]
+The RAG module retrieves semantically similar training samples or reference snippets using sentence-transformer embeddings and passes them, together with the input text, to a generative model that outputs a propaganda-related label.  These RAG predictions are then ensembled with a logistic regression model trained on classical features, forming the “RAG + LR” ensemble used in the later notebooks.  This design lets the system both ground its decisions in real examples and leverage learned decision boundaries from traditional models. 
 
 ## Dataset
 
-The `data/` folder contains preprocessed CSV files for train, validation, and test splits in several variants.[1]
+The `data/` folder contains preprocessed CSV files for train, validation, and test splits in several variants. 
 
 - Training data:
-  - `train_tg.csv` – raw training data in Telegram-like format.[1]
-  - `train_cleaned.csv` – cleaned text (lowercased, no stopwords, basic normalization).[1]
-  - `train_lemmatized.csv` – lemmatized text for downstream NLP models.[1]
+  - `train_tg.csv` – raw training data in Telegram-like format. 
+  - `train_cleaned.csv` – cleaned text (lowercased, no stopwords, basic normalization). 
+  - `train_lemmatized.csv` – lemmatized text for downstream NLP models. 
 - Validation and test data:
-  - `test_tg.csv`, `test_cleaned.csv`, `test_lemmatized.csv`, `val_lemmatized.csv` – same structure as training files, ready for evaluation.[1]
+  - `test_tg.csv`, `test_cleaned.csv`, `test_lemmatized.csv`, `val_lemmatized.csv` – same structure as training files, ready for evaluation. 
 
-All datasets are in CSV format and are ready to be fed directly into the notebooks.[1]
+All datasets are in CSV format and are ready to be fed directly into the notebooks. 
 
 ## Repository Structure
 
@@ -54,12 +54,12 @@ nlp_project/
 ```
 
 
-- `data_preprocessing.ipynb`: text cleaning, lemmatization, and dataset preparation.[1]
-- `propaganda_detection.ipynb`: baseline models with TF‑IDF and classical classifiers.[1]
-- `propaganda_ensemble.ipynb`: ensemble logic, including RAG + LR combination.[1]
-- `propaganda_rag_lr_ensemble_comparison.ipynb`: comparison of RAG, LR, and ensemble performance with plots.[1]
-- `plotting.ipynb` and `plots/`: scripts and outputs for visualizations.[1]
-- `shap-analysis.ipynb`: SHAP-based feature importance analysis for interpretability.[1]
+- `data_preprocessing.ipynb`: text cleaning, lemmatization, and dataset preparation. 
+- `propaganda_detection.ipynb`: baseline models with TF‑IDF and classical classifiers. 
+- `propaganda_ensemble.ipynb`: ensemble logic, including RAG + LR combination. 
+- `propaganda_rag_lr_ensemble_comparison.ipynb`: comparison of RAG, LR, and ensemble performance with plots. 
+- `plotting.ipynb` and `plots/`: scripts and outputs for visualizations. 
+- `shap-analysis.ipynb`: SHAP-based feature importance analysis for interpretability. 
 
 ## Installation & Setup
 
@@ -67,7 +67,7 @@ nlp_project/
 
 - Python 3.7+  
 - Jupyter Notebook  
-- Dependencies from `requirements.txt` (pandas, numpy, scikit-learn, nltk, matplotlib, seaborn, lightgbm, sentence-transformers, pymorphy3, wordcloud, etc.).[1]
+- Dependencies from `requirements.txt` (pandas, numpy, scikit-learn, nltk, matplotlib, seaborn, lightgbm, sentence-transformers, pymorphy3, wordcloud, etc.). 
 
 ### Installation Steps
 
@@ -91,18 +91,18 @@ pip install -r requirements.txt
    ```bash
    jupyter notebook
    ```
-2. Open `propaganda_detection.ipynb`.[1]
+2. Open `propaganda_detection.ipynb`. 
 3. Run cells sequentially to:
-   - Load and explore the dataset.[1]
-   - Preprocess text and engineer features.[1]
-   - Train and evaluate ML models.[1]
-   - Optionally run RAG and ensemble experiments in the corresponding notebooks.[1]
+   - Load and explore the dataset. 
+   - Preprocess text and engineer features. 
+   - Train and evaluate ML models. 
+   - Optionally run RAG and ensemble experiments in the corresponding notebooks. 
 
-Note: training some pretrained or RAG-based models can take up to several hours per run.[1]
+Note: training some pretrained or RAG-based models can take up to several hours per run. 
 
 ## How to Run the Demo (Web UI)
 
-The `demo/` folder contains a simple web interface to interact with the trained propaganda detection models.[1]
+The `demo/` folder contains a simple web interface to interact with the trained propaganda detection models. 
 
 Typical workflow (adjust names if your main script differs):
 
@@ -110,7 +110,7 @@ Typical workflow (adjust names if your main script differs):
    ```bash
    cd demo
    ```
-2. Make sure the virtual environment from the project root is activated and all dependencies are installed.[1]
+2. Make sure the virtual environment from the project root is activated and all dependencies are installed. 
 3. Run the demo app (for example, if it is a Streamlit app):
    ```bash
    streamlit run app.py
@@ -126,11 +126,11 @@ Typical workflow (adjust names if your main script differs):
 
 ## Project Workflow
 
-- Data loading and initial exploratory analysis.[1]
-- Text preprocessing and lemmatization using multiple pipelines.[1]
-- Feature extraction with TF‑IDF, classical n‑grams, and sentence-transformer embeddings.[1]
-- Model training with several algorithms (including lightGBM and logistic regression) and RAG.[1]
-- Model evaluation, plotting metrics, and SHAP-based interpretation.[1]
+- Data loading and initial exploratory analysis. 
+- Text preprocessing and lemmatization using multiple pipelines. 
+- Feature extraction with TF‑IDF, classical n‑grams, and sentence-transformer embeddings. 
+- Model training with several algorithms (including lightGBM and logistic regression) and RAG. 
+- Model evaluation, plotting metrics, and SHAP-based interpretation. 
 
 ## Authors
 
@@ -140,6 +140,6 @@ Typical workflow (adjust names if your main script differs):
 
 ## License
 
-This project is provided as-is for educational and research purposes.[1]
+This project is provided as-is for educational and research purposes. 
 
 ***
