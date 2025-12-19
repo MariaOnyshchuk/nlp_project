@@ -143,7 +143,3 @@ Typical workflow (adjust names if your main script differs):
 This project is provided as-is for educational and research purposes.[1]
 
 ***
-
-If you tell what framework you actually use inside `demo/` (Streamlit, Gradio, Flask, etc., and the main file name), the demo section can be tailored exactly to your commands.
-
-[1](https://github.com/MariaOnyshchuk/nlp_project)
